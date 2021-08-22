@@ -14,7 +14,7 @@ contract BEP20 is Context, IBEP20, Ownable {
     mapping(address => uint256) private _balances;
     mapping(address => mapping(address => uint256)) private _allowances;
 
-    uint256 private _totalSupply = 10000000000000 * 10 ** 18; // Sets totale supply to 10 trillion, a standard for tokens that have automatic burns with each transaction
+    uint256 private _totalSupply = 10000000000000 * 10 ** 18; // Sets totall supply to 10 trillion, a standard for tokens that have automatic burns with each transaction
     
 
     string private _name;
