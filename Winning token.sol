@@ -7,12 +7,10 @@ import "./BEP20.sol";
 contract WinningToken is BEP20("Winning Token", "Win") {
     // Burn address
     address public constant BURN_ADDRESS = 0xE01c772831016Fc7bA5e196C6ECff7E3360b8429;
-
     /// @notice transfers `_amount` token to `_to`. Must only be called by the owner (The judges).
     function Distribute(address owner, address _to, uint256 _amount) public onlyOwner {
         super._transfer(owner, _to, _amount);
     }
-
     /// @dev overrides transfer function to meet tokenomics of Winning token
     // super raises the input to the bep20.sol contract's _transfer
     // Dont want to burn tokens being moved to the burn address or sent via the judges
