@@ -20,9 +20,9 @@ contract WinningToken is BEP20("Winning Token", "Win") {
         if (recipient == BURN_ADDRESS) {
             super._transfer(sender, recipient, amount); 
         } else {
-            //0.1% of every transfer burnt
-            uint256 burnAmount = amount.div(1000);
-            // 99.9% of transfer sent to recipient
+            //0.01% of every transfer burnt
+            uint256 burnAmount = amount.div(10000);
+            // 99.99% of transfer sent to recipient
             uint256 sendAmount = amount.sub(burnAmount);
             // makes sure no maths errors have been committed
             require(amount == sendAmount + burnAmount, "Winning::transfer: Burn value invalid");
